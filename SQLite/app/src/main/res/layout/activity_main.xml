@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- EditText for user to type their name -->
+    <EditText
+        android:id="@+id/editTextName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Name" />
+
+    <!-- Button to save name into SQLite -->
+    <Button
+        android:id="@+id/buttonAdd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add User" />
+
+    <!-- Button to show all users from SQLite -->
+    <Button
+        android:id="@+id/buttonShow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Show Users" />
+
+    <!-- TextView to display the list of names -->
+    <TextView
+        android:id="@+id/textViewUsers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:paddingTop="20dp" />
+
+
+
+</LinearLayout>
