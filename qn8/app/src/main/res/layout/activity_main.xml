@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- LinearLayout: Arranges all its child elements in a single column (vertical) -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <!-- Title of the Screen -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Appointment Booking"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Input field for the Patient's Name -->
+    <EditText
+        android:id="@+id/etName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Patient Name"
+        android:inputType="textPersonName" />
+
+    <!-- Input field for the Patient's Phone Number -->
+    <EditText
+        android:id="@+id/etPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Phone Number"
+        android:inputType="phone" />
+
+    <!-- Label for the Spinner -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select Doctor:"
+        android:layout_marginTop="8dp"/>
+
+    <!-- Spinner: A dropdown menu to select a doctor from a list -->
+    <Spinner
+        android:id="@+id/spinnerDoctor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"/>
+
+    <!-- Button to trigger the DatePickerDialog -->
+    <Button
+        android:id="@+id/btnPickDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select Appointment Date" />
+
+    <!-- Shows which date the user picked -->
+    <TextView
+        android:id="@+id/tvSelectedDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="No date selected"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Button to confirm and save the booking -->
+    <Button
+        android:id="@+id/btnConfirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Confirm Booking" />
+
+    <!-- Shows the summary of current booking after clicking confirm -->
+    <TextView
+        android:id="@+id/tvSummary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Booking details summary"
+        android:textSize="16sp" />
+
+    <!-- Shows the last saved booking from SharedPreferences -->
+    <TextView
+        android:id="@+id/tvLastBooking"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Last Booking: None"
+        android:textColor="@android:color/darker_gray" />
+
+</LinearLayout>

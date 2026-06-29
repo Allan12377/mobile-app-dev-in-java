@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- Container for different tabs -->
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Home Tab Layout -->
+        <LinearLayout
+            android:id="@+id/layout_home"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="visible">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Welcome to Community Library!"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Operating Hours: 9 AM - 6 PM"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <!-- Search Tab Layout -->
+        <LinearLayout
+            android:id="@+id/layout_search"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:visibility="gone">
+            <EditText
+                android:id="@+id/et_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter book title" />
+            <Button
+                android:id="@+id/btn_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Search" />
+            <ListView
+                android:id="@+id/lv_books"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <!-- My Books Tab Layout -->
+        <ScrollView
+            android:id="@+id/layout_my_books"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="My Borrowed Books"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="1. Android Programming\n2. Java for Beginners\n3. Data Structures" />
+            </LinearLayout>
+        </ScrollView>
+    </FrameLayout>
+
+    <!-- Bottom Navigation Bar -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
